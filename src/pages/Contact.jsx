@@ -9,7 +9,6 @@ const Contact = () => {
       
       <br />
       <div className="page-section">
-        <p>
           Please fill out the form below to contact me.
           <form className='form-group'>
             <div>
@@ -26,7 +25,6 @@ const Contact = () => {
             </div>
             <button type="submit">Submit</button>
           </form>
-        </p>
       </div>
     </section>
   );

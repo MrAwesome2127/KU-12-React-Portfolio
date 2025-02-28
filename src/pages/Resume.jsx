@@ -5,13 +5,10 @@ const Resume = () => {
     <section id="Resume" className='page-wrapper'>
       <div className="page-section">
         <h3>Resume</h3>
-      </div>
-
       <div className="page-section">
         <h3>Tim Velasquez</h3>
-        <p>
           Seasoned and analytic Software QA Manager with over 15 years of professional experience, developing comprehensive testing strategies, leading software teams, and elevating customer satisfaction. Proficient in identifying root causes, crafting standard practice documents, and scrutinizing products for optimal quality. Skilled in managing vendor and partner relationships, validating existing practices, and mentoring software development engineers.
-        </p>
+
         
         <h3>Southern Company</h3>
         <h3>Senior Software QA Engineer (Contract)</h3>
@@ -34,6 +31,7 @@ const Resume = () => {
           <li>Worked closely with cross-functional teams to identify areas for improvement, incorporating changes to elevate customer satisfaction through industry-leading software engineering practices.</li>
           <li>Transitioned to bi-weekly releases within an Agile Scrum methodology, facilitating healthier deployments and aligning with modern development practices.</li>
         </ul>
+        </div>
       </div>
     </section>
     );

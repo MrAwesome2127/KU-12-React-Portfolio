@@ -13,13 +13,19 @@
     --light: rgba(238, 238, 247, 1);
   }
   
-  body {
+  body, html {
+    background: linear-gradient(
+      180deg,
+      rgb(32, 44, 136) 0%,
+      rgba(9, 9, 121, 1) 15%,
+      rgba(0, 2, 18, 1) 100%
+    );
     margin: 0;
     padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    height: 100%;
     color: var(--light);
     background-color: var(--primary);
-    line-height: 1.5;
   }
   
   h1,
@@ -92,8 +98,12 @@
   }
 
   .hero-banner {
-    background: rgb(68, 88, 120);
-    background-image: url("../images/luna-litter-web-768x390.jpg"), linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
+    background: linear-gradient(
+      180deg,
+      rgb(55, 65, 138) 0%,
+      rgb(27, 27, 126) 15%,
+      rgb(0, 2, 18) 100%
+    );
     background-size: cover;
     background-position: center;
     background-blend-mode: soft-light;
@@ -125,21 +135,30 @@
     line-height: 1.2;
     display: inline;
   }
-  
-  .page-wrapper {
-    max-width: 88%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+
   
   .page-section {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    max-width: 20000px; /* Adjust as needed */
+    margin: 0 auto; /* Center the content */
+    padding: 20px;
+    box-sizing: border-box;
+    padding-top: 3%;
     padding-left: 7%;
     padding-right: 7%;
   }
+
+  .portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between items as needed */
+    justify-content: center;
+  }
+
+  .portfolio-item {
+    flex: 1 1 calc(50% - 20px); /* Two items per row with gap */
+    box-sizing: border-box;
+  }
+  
   
   .page-section > h3 {
     font-size: 2vw;
@@ -239,6 +258,11 @@
     height: 50px;
     width: 50px;
   }
+  .page-wrapper {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 
   .portfolio-grid {
     display: flex;
@@ -246,20 +270,44 @@
     gap: 20px; /* Adjust the gap between items as needed */
     justify-content: center;
   }
-
+  
   .portfolio-item {
+    position: relative;
     flex: 1 1 calc(50% - 20px); /* Two items per row with gap */
     box-sizing: border-box;
   }
-
+  
   .portfolio-item img {
-    height: 300px;
-    width: 500px;
+    width: 100%; /* Ensure the image takes up the full width of the container */
+    height: 300px; /* Set a fixed height for the images */
+    object-fit: cover; /* Ensure the image covers the entire area while maintaining aspect ratio */
     border-radius: 23px; /* Optional: Add rounded corners */
   }
+  
+  .portfolio-item .hover-image,
+  .portfolio-item .github-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .portfolio-item .github-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .portfolio-item .github-icon {
+    width: 10%; /* Set the width of the GitHub icon */
+    height: 10%; /* Set the height of the GitHub icon */
+  }
 
-  .form-group {
-    
+  .portfolio-item:hover .hover-image,
+  .portfolio-item:hover .github-link {
+    opacity: 1;
   }
 
   .form-group label {
